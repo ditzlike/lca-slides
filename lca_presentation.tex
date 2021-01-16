@@ -39,7 +39,6 @@
 	%TODO; überdenken: vllt mehr auf PaStA eingehen? Live-Demo? Das Labor mehr vorstellen? 
 	%TODO: Fragestellungen, die man beantworten möchte/Probleme, die man lösen möchte
 	%TODO: alle Kontributoren, Collaboration mit der Uni Passau, dass alles, was wir machen, auch Anwendung hat und der Community was bringen soll, Elisa erwähnen
-	%tODO: nochmal am Ende sagen, wer wir alle sind
 
 	\begin{frame}
 	\frametitle{Speaker Introduction}
@@ -47,9 +46,8 @@
 		\begin{column}{0.65\textwidth}
 			\begin{block}{Pia Eichinger}
 			\begin{itemize}
-				\item Student at the University of Applied Sciences in Regensburg (OTH Regensburg)
+			\item Student at the University of Applied Sciences in Regensburg (OTH Regensburg)
 			\item pia.eichinger@st.oth-regensburg.de
-			%\item Currently in a Masters of Applied Research Programme, researching database-specific kernels
 			\item Researched organisational and maintenance structure of the Linux kernel
 			\end{itemize}
 			\end{block}
@@ -119,6 +117,23 @@
 	\end{minipage}
 	\end{frame}
 
+
+	\begin{frame}
+	\frametitle{Collaboration and Motivation}
+		\begin{block}{Collaboration Partners}
+			\begin{itemize}
+				\item ELISA
+				\item University of Passau
+			\end{itemize}
+		\end{block}
+		\begin{block}{Motivation and Goals}
+			\begin{itemize}
+				\item dass das, was wir machen, Anwendung hat?
+				\item Tools to support the open source community
+			\end{itemize}
+		\end{block}
+	\end{frame}
+
 	\begin{frame}
 	\frametitle{Bachelor Thesis - Motivation and Beginnings}
 		\begin{block}{Linux + Safety Critical Environments}
@@ -128,20 +143,27 @@
 		\Rightarrow Process characterisation with hindsight
 
 		\begin{alertblock}{Goal}
-			Use analytical tools for quantitive software engineering to analyse patch integration in the Linux kernel repository. %TODO: Aufspalten Mit analytischem quantitativen Softwareengineering wird des gmacht
+			\begin{itemize}
+				\item Analytical quantitative software engineering
+				\item Analyse patch integration
+			\end{itemize}
+			%Use analytical tools for quantitive software engineering to analyse patch integration in the Linux kernel repository. %TODO: Aufspalten Mit analytischem quantitativen Softwareengineering wird des gmacht
 		\end{alertblock}
 	\end{frame}
 
 
 	\begin{frame}
+	\frametitle{Maintainers Hierarchy}
+     		\includegraphics[width=1.0\textwidth]{pics/maintainers_hierarchy.png}
+	\end{frame}
+
+
+	\begin{frame}
 	\frametitle{Bachelor Thesis - Motivation and Beginnings}
-		\begin{block}{Patch Integration - Maintainers Hierarchy Traversal}
-			Developer $\Rightarrow$ Maintainer $\Rightarrow$ Subsystem Maintainer $\Rightarrow$ Mainline
-		\end{block}
-		\begin{block}{Original Research Questions}
+		\begin{block}{Original Projects}
 			\begin{itemize}
-				\item Was a patch conformingly integrated? (Integrated by a relevant maintainer according to MAINTAINERS)
-				\item Did the patch traverse the maintainers hierarchy?
+				\item Conform Integration of Patches
+				\item Patch Traversal through MAINTAINERS Hierarchy
 				%\item How do the different subsystems compare in regards to integration?
 			\end{itemize}
 		\end{block}
@@ -172,12 +194,12 @@
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
 			\begin{block}{Docs: Early-stage Planning}
-			"Again, the MAINTAINERS file is	the place to start.  That file tends to not always be up to date, though, and not all \textbf{subsystems} are represented there."
+				"Again, the MAINTAINERS file is	the place to start. [...] not all \textbf{subsystems} are represented there."
 			\end{block}
      		\includegraphics[width=0.6\textwidth]{pics/MAINTAINERSbild.png}
 		\end{column}
-		\begin{column}{0.4\textwidth}
-		$\Rightarrow$ Every single entry in MAINTAINERS is one subsystem.
+		\begin{column}{0.5\textwidth}
+			$\Rightarrow$ \textbf{Subsystems}
 		\end{column}
 	\end{columns}
 	\end{frame}
@@ -189,21 +211,22 @@
 
 	\begin{block}{But... }
 		\begin{itemize}
-		\item Not a single "Media" or "Media Subsystem" entry in MAINTAINERS
+		\item No "Media"/"Media Subsystem" entry in MAINTAINERS
 		\item Over 100 "subsystems" \textit{containing} the word "Media"
 		\end{itemize}
 	\end{block}
-	$\Rightarrow$ So which one is it? All of them together? Some of them together? Any single \textit{one} of them?
+	$\Rightarrow$ Which one?
 	\end{frame}
 
 	\begin{frame} %TODO: Entries in MAINTAINERS: sections, rechts in Bsp veranschaulichen
 	\frametitle{Subsystem Definition}
 		\begin{block}{Definition: Subsystem}
-			We call the entries in MAINTAINERS \textbf{sections}.
+			Entries in MAINTAINERS: \textbf{sections}
 
-			Two sections are \textbf{thematically related}, if they share a lot files measured in Lines of Code (LoC).
+			Sections share files (measured in Lines of Code): \textbf{thematically related}
 
-			A subsystem is a grouping of \textbf{strongly thematically related} sections.
+			Grouping of thematically strong related sections: \textbf{subsystem}.
+
 		\end{block}
 	\end{frame}
 
@@ -213,10 +236,10 @@
 			$\Rightarrow$ Let's find out!
 		\end{block}
 
-		\begin{block}{New Research Questions}
+		\begin{block}{Research Projects}
 			\begin{itemize}
-				\item Was a patch conformingly integrated? (Integrated by a relevant maintainer according to MAINTAINERS)
-				\item Which most influential subsystems can we detect through clustering and grouping sections based on thematical relations?
+				\item Conform Integration of Patches
+				\item Subsystem Detection
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -227,10 +250,10 @@
 		\begin{alertblock}{Definition: Section Graph}
 			\begin{itemize}
 				\item Undirected Graph
-				\item \textit{Vertices}: Every single section of maintainers becomes one vertex
-				\item \textit{Vertex Weight}: accumulated LoC of all relevant files for the section
+				\item \textit{Vertices}: Sections of MAINTAINERS
+				%\item \textit{Vertex Weight}: accumulated LoC of all relevant files for the section
 				\item \textit{Edge}: Do two sections share LoC? Yes $\Rightarrow$ Edge
-				\item \textit{Edge Weight}: accumulated LoC of all shared files of both sections
+				%\item \textit{Edge Weight}: accumulated LoC of all shared files of both sections
 			\end{itemize}
 		\end{alertblock}
 
@@ -336,18 +359,21 @@
 
 	\begin{frame}
 	\frametitle{Reminder: Research Questions}
-		\begin{alertblock}{Integration Research Question}
-		Was a patch conformingly integrated? (Integrated by a relevant maintainer according to MAINTAINERS)
+		\begin{alertblock}{Conform Patch Integration}
+			Patch integrated by relevant maintainer (from MAINTAINERS) $\Rightarrow$ \textbf{Conform Integration}
 		\end{alertblock}
 
 		\begin{block}{TL;DR}
 			\begin{itemize}
-				\item Research recent patches in mainline and by which maintainer they were originally committed
-				\item Maintainer relevant according to get\_maintainer.pl? $\Rightarrow$ "correctly" integrated
-				\item Research on all major lists with highest patch traffic
-				\item Go into detail as to \textit{why} a maintainer might have "incorrectly" committed patches outside of their relevant subsystem
+				\item Analyse recent patch integrations
+				\item Determine \textit{conform} patch integration
+				%\item Research recent patches in mainline and by which maintainer they were originally committed
+				%\item Maintainer relevant according to get\_maintainer.pl? $\Rightarrow$ "correctly" integrated
+				%\item Research on all major lists with highest patch traffic
+				%\item Go into detail as to \textit{why} a maintainer might have "incorrectly" committed patches outside of their relevant subsystem
 			\end{itemize}
 		\end{block}
+		$\Rightarrow$ Analyse reasons for "incorrect" patch integration
 	\end{frame}
 
 
