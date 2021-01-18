@@ -34,11 +34,12 @@
 
 	%TODO: TIKZ-Diagramm um Section Graph zu verdeutlichen, vllt noch Files reinmachen
 	%TODO: Coole Trivia zu neuen Subsystemen einholen, damit man mehr darüber reden kann
-	%TODO: alles neu plotten
-	%TODO: integrieren
-	%TODO; überdenken: vllt mehr auf PaStA eingehen? Live-Demo? Das Labor mehr vorstellen? 
 	%TODO: Fragestellungen, die man beantworten möchte/Probleme, die man lösen möchte
 	%TODO: alle Kontributoren, Collaboration mit der Uni Passau, dass alles, was wir machen, auch Anwendung hat und der Community was bringen soll, Elisa erwähnen
+
+	%Thank you very much
+	%isn't much to say about me
+	%which is what my bachelor thesis is about
 
 	\begin{frame}
 	\frametitle{Speaker Introduction}
@@ -60,7 +61,7 @@
 
 
 	\begin{frame}
-	\frametitle{Co-Authors}
+	\frametitle{Research Group: Co-Authors}
 	\begin{minipage}[c]{1.0\linewidth}
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
@@ -120,18 +121,21 @@
 
 	\begin{frame}
 	\frametitle{Collaboration and Motivation}
+		\begin{block}{Motivation and Goals}
+			\begin{itemize}
+				\item Formalising/Assessing the Linux kernel development process
+				\item Improve/Quantify the development process
+				\item Tools to support the open source community
+				\item Safety-Critical Development
+			\end{itemize}
+		\end{block}
 		\begin{block}{Collaboration Partners}
 			\begin{itemize}
 				\item ELISA
 				\item University of Passau
 			\end{itemize}
 		\end{block}
-		\begin{block}{Motivation and Goals}
-			\begin{itemize}
-				\item dass das, was wir machen, Anwendung hat?
-				\item Tools to support the open source community
-			\end{itemize}
-		\end{block}
+		$\Rightarrow$ Statistical Methods to research/understand the development process
 	\end{frame}
 
 	\begin{frame}
@@ -139,8 +143,9 @@
 		\begin{block}{Linux + Safety Critical Environments}
 			= Development Process: Major certification challenges
 		\end{block}
-		\Rightarrow Ex post facto analysis\\ %TODO: Ex post facto analysis\\
-		\Rightarrow Process characterisation with hindsight
+		$\Rightarrow$ Ex post facto analysis\\ %TODO: Ex post facto analysis\\
+		%\Rightarrow Process characterisation with hindsight
+		$\Rightarrow$ Characterize the process with hindsight
 
 		\begin{alertblock}{Goal}
 			\begin{itemize}
@@ -163,7 +168,7 @@
 		\begin{block}{Original Projects}
 			\begin{itemize}
 				\item Conform Integration of Patches
-				\item Patch Traversal through MAINTAINERS Hierarchy
+				\item Patch traversal through MAINTAINERS hierarchy
 				%\item How do the different subsystems compare in regards to integration?
 			\end{itemize}
 		\end{block}
@@ -196,10 +201,14 @@
 			\begin{block}{Docs: Early-stage Planning}
 				"Again, the MAINTAINERS file is	the place to start. [...] not all \textbf{subsystems} are represented there."
 			\end{block}
+			\begin{center}
      		\includegraphics[width=0.6\textwidth]{pics/MAINTAINERSbild.png}
+			\end{center}
 		\end{column}
 		\begin{column}{0.5\textwidth}
+			\begin{center}
 			$\Rightarrow$ \textbf{Subsystems}
+			\end{center}
 		\end{column}
 	\end{columns}
 	\end{frame}
@@ -207,7 +216,9 @@
 
 	\begin{frame}
 	\frametitle{The Subsystem Problem - What is a subsystem?}
+	\begin{center}
      	\includegraphics[width=0.6\textwidth]{pics/Media_subsystem.png}
+	\end{center}
 
 	\begin{block}{But... }
 		\begin{itemize}
@@ -215,7 +226,9 @@
 		\item Over 100 "subsystems" \textit{containing} the word "Media"
 		\end{itemize}
 	\end{block}
+	\begin{center}
 	$\Rightarrow$ Which one?
+	\end{center}
 	\end{frame}
 
 	\begin{frame} %TODO: Entries in MAINTAINERS: sections, rechts in Bsp veranschaulichen
@@ -247,7 +260,11 @@
 
 	\begin{frame}
 	\frametitle{Definition: Section Graph}
-		\begin{alertblock}{Definition: Section Graph}
+	\begin{alertblock}{Goal: Find and analyse subsystems}
+		Visualise MAINTAINERS sections and thematical relations
+	\end{alertblock}
+
+		\begin{block}{Definition: Section Graph}
 			\begin{itemize}
 				\item Undirected Graph
 				\item \textit{Vertices}: Sections of MAINTAINERS
@@ -255,9 +272,11 @@
 				\item \textit{Edge}: Do two sections share LoC? Yes $\Rightarrow$ Edge
 				%\item \textit{Edge Weight}: accumulated LoC of all shared files of both sections
 			\end{itemize}
-		\end{alertblock}
+		\end{block}
 
-		$\Rightarrow$ Find subsystems by finding clusters with common community detection algorithms (Walktrap) %TODO: etablierte Verfahren, referenziere Paper Mitchell Choblins Mauerer, Abels, wir ham Gedanken drüber gmacht, etabliertes Verfahren, wurde damit entwickelt und wir nehmen ned IRGENDWAS
+		$\Rightarrow$ Detect clusters (subsystems)
+
+		%$\Rightarrow$ Find subsystems by finding clusters with common community detection algorithms (Walktrap) %TODO: etablierte Verfahren, referenziere Paper Mitchell Choblins Mauerer, Abels, wir ham Gedanken drüber gmacht, etabliertes Verfahren, wurde damit entwickelt und wir nehmen ned IRGENDWAS
 	\end{frame}
 
 \begin{frame}
@@ -266,9 +285,9 @@
 		\begin{column}{0.4\textwidth}
 \begin{tikzpicture}
     \begin{scope}[shift={(3cm,-5cm)}, fill opacity=0.5]
-        \draw[fill=red, draw = black] (0,0) circle (2);
+        \draw[fill=blue, draw = black] (0,0) circle (2);
         \draw[fill=green, draw = black] (-1.5,0) circle (1);
-    \draw[fill=blue, draw = black] (1.5,0) circle (1);
+    \draw[fill=red, draw = black] (1.5,0) circle (1);
     %\node at (0,4) (A) {\large\textbf{A}};
     \node at (-2,1) (B) {\large\textbf{B}};
     \node at (2,1) (C) {\large\textbf{C}};
@@ -330,7 +349,7 @@
 	\begin{frame}
 	\frametitle{Top-20\% Section Graph}
 	\begin{center}
-	\includegraphics[scale=0.6]{pics/final_graph_with_texts_cropped.pdf}
+	\includegraphics[scale=0.3]{pics/SectionGraph_NoLabels.png}
 	\end{center}
 	\end{frame}
 
@@ -340,8 +359,8 @@
 	\frametitle{Cluster Discussion and Terminology}
 		\begin{alertblock}{Cluster Discussion}
 			\begin{itemize}
-				\item Analyse and discuss each major cluster as \textbf{isolated graph}
-				\item "Recluster" the isolated cluster graph again from within using walktrap
+				\item Each major cluster: \textbf{isolated graph}
+				\item "Recluster" again from within
 			\end{itemize}
 		\end{alertblock}
 		
@@ -349,8 +368,8 @@
 			\begin{itemize}
 				\item Isolated cluster as own graph: \textbf{Cluster Graph}
 				\item Cluster found within cluster graph: \textbf{Subcluster}
-				\item Vertex degree within entire section graph: \textbf{Outer Degree}
-				\item Vertex degree within cluster graph: \textbf{Inner Degree}
+				%\item Vertex degree within entire section graph: \textbf{Outer Degree}
+				%\item Vertex degree within cluster graph: \textbf{Inner Degree}
 			\end{itemize}
 		\end{block}
 	\end{frame}
@@ -390,7 +409,22 @@
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Contributors}
+	\frametitle{Future Work}
+		\begin{block}{Future Work}
+			\begin{itemize}
+				\item Combination: Subsystems and Conform Patch Integration
+				\item Cluster discussion on full section graph
+				\item Visualise earlier versions and development
+				\item Apply section graph to other open source projects (QEMU, U-Boot)
+				\item Maintainer Graph
+			\end{itemize}
+		\end{block}
+
+		All work integrated in https://github.com/lfd/PaStA
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Research Group}
 	\begin{minipage}[c]{1.0\linewidth}
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
