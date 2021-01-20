@@ -32,10 +32,11 @@
 	%	\end{block}
 	%\end{frame}
 
-	%TODO: TIKZ-Diagramm um Section Graph zu verdeutlichen, vllt noch Files reinmachen
-	%TODO: Coole Trivia zu neuen Subsystemen einholen, damit man mehr darüber reden kann
-	%TODO: Fragestellungen, die man beantworten möchte/Probleme, die man lösen möchte
-	%TODO: alle Kontributoren, Collaboration mit der Uni Passau, dass alles, was wir machen, auch Anwendung hat und der Community was bringen soll, Elisa erwähnen
+	%TODO: Conclusion und so..., was haben wir grad gezeigt, wem bringt das was, wie kann ich das verwerten? -> Safety Argumentation, für das assessment von Entwicklungsprozessen, was bringt das der Community? -> wie sind denn Subsysteme so strukturiert etc. etc. 
+
+	%TODO: die graphen herzeigen, auf den Artikel auch hinweisen
+	% TODO: Am Anfang auch mal über die LWN herzeigen, dass des auch ne gewisse Relevanz hat
+
 
 	%Thank you very much
 	%isn't much to say about me
@@ -47,9 +48,9 @@
 		\begin{column}{0.65\textwidth}
 			\begin{block}{Pia Eichinger}
 			\begin{itemize}
-			\item Student at the University of Applied Sciences in Regensburg (OTH Regensburg)
-			\item pia.eichinger@st.oth-regensburg.de
-			\item Researched organisational and maintenance structure of the Linux kernel
+				\item Student at the University of Applied Sciences in Regensburg (OTH)
+			\item Email: pia.eichinger@st.oth-regensburg.de
+			\item Research interests: organisational and maintenance structure of the Linux kernel
 			\end{itemize}
 			\end{block}
 		\end{column}
@@ -58,6 +59,11 @@
 		\end{column}
 	\end{columns}
 	\end{frame}
+
+	%A quick introduction
+	%A few words, people who made this possible, presented me with this opportunity
+	%Who did most of the work, developed the entire foundation for this research
+	%Research many things, focus on quantitive software engineering
 
 
 	\begin{frame}
@@ -70,7 +76,7 @@
 			\end{center}
 		\end{column}
 		\begin{column}{0.7\textwidth}
-		\begin{block}{Wolfgang Mauerer}
+		\begin{block}{Prof. Dr. Wolfgang Mauerer}
 			\begin{itemize}
 				\item Professor for theoretical computer science
 				\item wolfgang.mauerer@othr.de
@@ -94,7 +100,7 @@
 				\item ralf.ramsauer@othr.de
 			\end{itemize}
 		\end{block}
-			%Ralf Ramsauer\\PhD student \\
+			%Ralf Ramsauer\\PhD student \\ TODO: these are the heads, Ralf is my supervisor, did most of the work
 		\end{column}
 		\end{columns}
 	\end{minipage}
@@ -106,7 +112,7 @@
 			\end{center}
 		\end{column}
 		\begin{column}{0.7\textwidth}
-		\begin{block}{Stefanie Scherzinger}
+		\begin{block}{Prof. Dr. Stefanie Scherzinger}
 			\begin{itemize}
 				\item Professor for scalable database systems
 				\item stefanie.scherzinger@uni-passau.de
@@ -118,15 +124,21 @@
 	\end{minipage}
 	\end{frame}
 
+	% why we're researching it, not just for fun
+	% Formalise, assess, gain some deeper understanding ,
+	% we're constantly developing, writing tools
+	% applicable for anyone using git
+	% especially interesting for safety-critical development
+	%Elisa: project to enable linux in safety-critical systems and environments, end of day the motivation for research we're presenting today
+	% What we do: apply stat..., quantify it, at the end of the day improve it
 
 	\begin{frame}
 	\frametitle{Collaboration and Motivation}
 		\begin{block}{Motivation and Goals}
 			\begin{itemize}
-				\item Formalising/Assessing the Linux kernel development process
-				\item Improve/Quantify the development process
-				\item Tools to support the open source community
-				\item Safety-Critical Development
+				\item Formalise/Assess the Linux kernel development process
+				\item Provide tools to support the open source community
+				\item Assist/Support Safety-Critical Developments
 			\end{itemize}
 		\end{block}
 		\begin{block}{Collaboration Partners}
@@ -138,24 +150,32 @@
 		$\Rightarrow$ Statistical Methods to research/understand the development process
 	\end{frame}
 
+	%So: Like already said, all started...
+	% One big goal for Elisa is to enable, but why problem?
+	%Dev process requires crit to be met
+	% Nobody really cares to perfectly document the process and keeping criteria in mind
+	% Our goal..., my focus specifically
+
 	\begin{frame}
 	\frametitle{Bachelor Thesis - Motivation and Beginnings}
 		\begin{block}{Linux + Safety Critical Environments}
-			= Development Process: Major certification challenges
+			= Major certification problems: Development process
 		\end{block}
 		$\Rightarrow$ Ex post facto analysis\\ %TODO: Ex post facto analysis\\
 		%\Rightarrow Process characterisation with hindsight
-		$\Rightarrow$ Characterize the process with hindsight
+		$\Rightarrow$ Characterise the process with hindsight
 
 		\begin{alertblock}{Goal}
 			\begin{itemize}
 				\item Analytical quantitative software engineering
-				\item Analyse patch integration
+				\item Analyse the integration of patch
 			\end{itemize}
 			%Use analytical tools for quantitive software engineering to analyse patch integration in the Linux kernel repository. %TODO: Aufspalten Mit analytischem quantitativen Softwareengineering wird des gmacht
 		\end{alertblock}
 	\end{frame}
 
+	%sure, all familiar with maintainers hier
+	
 
 	\begin{frame}
 	\frametitle{Maintainers Hierarchy}
@@ -168,15 +188,18 @@
 		\begin{block}{Original Projects}
 			\begin{itemize}
 				\item Conform Integration of Patches
-				\item Patch traversal through MAINTAINERS hierarchy
+				\item Patch traversal through maintainers hierarchy
 				%\item How do the different subsystems compare in regards to integration?
 			\end{itemize}
 		\end{block}
 	\end{frame}
 
+	%While brainstorming, we came across
+
+	%This seems like trivial question, but I invite you to pause and ponder
 
 	\begin{frame}
-	\frametitle{The Subsystem Problem}
+	\frametitle{The Subsystem Question}
 		\begin{alertblock}{Only problem is ...}
 			\begin{itemize}
 				\item \textbf{... where can I find the maintainers hierarchy?}
@@ -188,7 +211,7 @@
 
 
 	\begin{frame}
-	\frametitle{The Subsystem Problem - What is a subsystem?}
+	\frametitle{The Subsystem Question - What is a subsystem?}
 	%\begin{block}{Documentation: Early-stage Planning in the Linux Kernel Development Process}
 	%	"Again, the MAINTAINERS file is	the place to start.  That file tends to not always be up to date, though, and not all \textbf{subsystems} are represented there."
 
@@ -356,26 +379,26 @@
 
 
 	\begin{frame}
-	\frametitle{Cluster Discussion and Terminology}
-		\begin{alertblock}{Cluster Discussion}
+	\frametitle{Cluster Discussion}
+		\begin{block}{Cluster Discussion}
 			\begin{itemize}
-				\item Each major cluster: \textbf{isolated graph}
+				\item Major clusters: \textbf{isolated graph}
 				\item "Recluster" again from within
 			\end{itemize}
-		\end{alertblock}
-		
-		\begin{block}{Terminology}
-			\begin{itemize}
-				\item Isolated cluster as own graph: \textbf{Cluster Graph}
-				\item Cluster found within cluster graph: \textbf{Subcluster}
-				%\item Vertex degree within entire section graph: \textbf{Outer Degree}
-				%\item Vertex degree within cluster graph: \textbf{Inner Degree}
-			\end{itemize}
 		\end{block}
+		
+		%\begin{block}{Terminology}
+		%	\begin{itemize}
+		%		\item Isolated cluster as own graph: \textbf{Cluster Graph}
+		%		\item Cluster found within cluster graph: \textbf{Subcluster}
+		%		%\item Vertex degree within entire section graph: \textbf{Outer Degree}
+		%		%\item Vertex degree within cluster graph: \textbf{Inner Degree}
+		%	\end{itemize}
+		%\end{block}
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Reminder: Research Questions}
+	\frametitle{Reminder: Research Project}
 		\begin{alertblock}{Conform Patch Integration}
 			Patch integrated by relevant maintainer (from MAINTAINERS) $\Rightarrow$ \textbf{Conform Integration}
 		\end{alertblock}
@@ -416,6 +439,7 @@
 				\item Cluster discussion on full section graph
 				\item Visualise earlier versions and development
 				\item Apply section graph to other open source projects (QEMU, U-Boot)
+				\item Easier overview for newcomers
 				\item Maintainer Graph
 			\end{itemize}
 		\end{block}
@@ -448,7 +472,7 @@
 			\end{center}
 		\end{column}
 		\begin{column}{0.7\textwidth}
-		\begin{block}{Wolfgang Mauerer}
+		\begin{block}{Prof. Dr. Wolfgang Mauerer}
 			wolfgang.mauerer@othr.de
 		\end{block}
 		\end{column}
@@ -478,7 +502,7 @@
 			\end{center}
 		\end{column}
 		\begin{column}{0.7\textwidth}
-		\begin{block}{Stefanie Scherzinger}
+		\begin{block}{Prof. Dr. Stefanie Scherzinger}
 			stefanie.scherzinger@uni-passau.de
 		\end{block}
 			%Stefanie Scherzinger\\Professor for scalable database systems\\stefanie.scherzinger@uni-passau.de
