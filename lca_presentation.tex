@@ -1,4 +1,5 @@
 \documentclass{beamer}
+%\documentclass[12pt]{beamer}
 \usetheme{Copenhagen}
 %\usetheme{OTHR}
 \usepackage{polyglossia}
@@ -33,16 +34,12 @@
 	%	\end{block}
 	%\end{frame}
 
-	% TODO: Am Anfang auch mal über die LWN herzeigen, dass des auch ne gewisse Relevanz hat
-	%TODO: Foliennummern eintragen
+	% TODO: Foliennummern eintragen
 	% TODO: erwähnen, dass das die Gruppe ist, mehr nicht
-	%TODO: Safety soll Prozess sicherstellen und Midnestqualität sicherstellen, jetzt mal in der Maintainers hierarchie schauen, inwiefern ist das Patch konform damit? Und da kommen keine Crosspatches rein
+	% TODO: Safety soll Prozess sicherstellen und Midnestqualität sicherstellen, jetzt mal in der Maintainers hierarchie schauen, inwiefern ist das Patch konform damit? Und da kommen keine Crosspatches rein
 	%Prozess definieren, was braucht man dafür, aber wenn man nicht weiß, wie es ausschauen soll, kann man nicht feststellen, ob es überhaupt konform ist
-	%TODO: Weniger Story da mit reinmachenj, sondern nur, dass man nicht weiß, was es ist, nirgendwo definiert
-	%TODO %s Conform -> Conforming
-	% TODO: Safety Critical Development: Guter, wohldefinierter und _befolgter_ Prozess -> Sicherstellung von Mindestqualität, Voraussetzung für Gutes Produkt -> Darf für safety-critical verwendet werden
+	% TODO: Weniger Story da mit reinmachenj, sondern nur, dass man nicht weiß, was es ist, nirgendwo definiert
 	% TODO: nicht so auf Forschung aufspalten, sondern die Gemeinsamkeiten hervorheben
-	%TODO: 
 
 
 	%Thank you very much
@@ -79,11 +76,28 @@
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
 			\begin{center}
+     		\includegraphics[width=0.5\textwidth]{pics/speakers_ralf.png}
+			\end{center}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+		\begin{block}{Ralf Ramsauer}
+			\begin{itemize}
+				\item PhD student
+				\item ralf.ramsauer@othr.de
+			\end{itemize}
+		\end{block}
+		\end{column}
+		\end{columns}
+	\end{minipage}
+	\begin{minipage}[c]{1.0\linewidth}
+		\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\begin{center}
      		\includegraphics[width=0.5\textwidth]{pics/speakers_mauerer.jpeg}
 			\end{center}
 		\end{column}
 		\begin{column}{0.7\textwidth}
-		\begin{block}{Prof. Dr. Wolfgang Mauerer}
+		\begin{block}{Wolfgang Mauerer}
 			\begin{itemize}
 				\item Professor for theoretical computer science
 				\item wolfgang.mauerer@othr.de
@@ -97,29 +111,11 @@
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
 			\begin{center}
-     		\includegraphics[width=0.5\textwidth]{pics/speakers_ralf.png}
-			\end{center}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-		\begin{block}{Ralf Ramsauer}
-			\begin{itemize}
-				\item PhD student
-				\item ralf.ramsauer@othr.de
-			\end{itemize}
-		\end{block}
-			%Ralf Ramsauer\\PhD student \\ TODO: these are the heads, Ralf is my supervisor, did most of the work
-		\end{column}
-		\end{columns}
-	\end{minipage}
-	\begin{minipage}[c]{1.0\linewidth}
-		\begin{columns}
-		\begin{column}{0.35\textwidth}
-			\begin{center}
      		\includegraphics[width=0.5\textwidth]{pics/speakers_scherzinger.jpeg}
 			\end{center}
 		\end{column}
 		\begin{column}{0.7\textwidth}
-		\begin{block}{Prof. Dr. Stefanie Scherzinger}
+		\begin{block}{Stefanie Scherzinger}
 			\begin{itemize}
 				\item Professor for scalable database systems
 				\item stefanie.scherzinger@uni-passau.de
@@ -136,7 +132,7 @@
 	% we're constantly developing, writing tools
 	% applicable for anyone using git
 	% especially interesting for safety-critical development
-	%Elisa: project to enable linux in safety-critical systems and environments, end of day the motivation for research we're presenting today
+	% Elisa: project to enable linux in safety-critical systems and environments, end of day the motivation for research we're presenting today
 	% What we do: apply stat..., quantify it, at the end of the day improve it
 
 	\begin{frame}
@@ -145,7 +141,7 @@
 			\begin{itemize}
 				\item Formalise/Assess the Linux kernel development process
 				\item Provide tools to support the open source community
-				\item Assist/Support Safety-Critical Developments
+				\item Assist/Support Safety Critical Developments
 			\end{itemize}
 		\end{block}
 		\begin{block}{Collaboration Partners}
@@ -163,10 +159,31 @@
 	% Nobody really cares to perfectly document the process and keeping criteria in mind
 	% Our goal..., my focus specifically
 
+
 	\begin{frame}
-	\frametitle{Bachelor Thesis - Motivation and Beginnings}
+	\frametitle{Safety Critical Environments: Certification}
+		\begin{block}{Certification Motivation}
+			\begin{itemize}
+				\item Highly sensitive environment
+				\item Working software could ensure survival
+				\item Need to ensure software quality \textbf{by all means necessary}
+			\end{itemize}
+		\end{block}
+		\begin{block}{Development Process: Trait of Code Quality}
+			\begin{enumerate}
+				\item Good, well-defined development process\\ 
+				\item Developers \textit{strictly} comply with the process\\
+				\item Trait of good, well-developed product\\
+				\item $\Rightarrow$ \textbf{Enable usage in safety critical environments}
+			\end{enumerate}
+		\end{block}
+
+	\end{frame}
+
+	\begin{frame}
+	\frametitle{Integration Project - Motivation and Beginnings}
 		\begin{block}{Linux + Safety Critical Environments}
-			= Major certification problems: Development process
+			= Major certification problems: Open development process
 		\end{block}
 		$\Rightarrow$ Ex post facto analysis\\ 
 		%\Rightarrow Process characterisation with hindsight
@@ -193,11 +210,19 @@
 
 
 	\begin{frame}
-	\frametitle{Bachelor Thesis - Motivation and Beginnings}
+	\frametitle{Integration Project - Motivation and Beginnings}
 		\begin{block}{Maintainers Expectations vs Maintainers Reality: Original Projects}
 			\begin{itemize}
-				\item Conform Integration of Patches
+				\item Conforming Integration of Patches
+					%\begin{itemize}
+					%	\item Analyse integrated patches
+					%	\item Integrated by relevant maintainer? If yes $\Rightarrow$ \textbf{conforming integration}
+					%\end{itemize}
 				\item Patch traversal through maintainers hierarchy
+					%\begin{itemize}
+					%	\item Analyse patch flow of integrated patches
+					%	\item Cross-cutting patch flows from unrelated subsystems/maintainers?
+					%\end{itemize}
 				%\item How do the different subsystems compare in regards to integration?
 			\end{itemize}
 		\end{block}
@@ -276,7 +301,7 @@
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Bachelor Thesis - Change of Research Question}
+	\frametitle{Integration Project - Change of Plan}
 		\begin{block}{No clear listing of subsystems}
 			$\Rightarrow$ Let's find out!
 		\end{block}
@@ -287,7 +312,7 @@
 
 		\begin{block}{Maintainers Expectations vs Maintainers Reality: New Projects}
 			\begin{itemize}
-				\item Conform Integration of Patches
+				\item Conforming Integration of Patches
 				\item Subsystem Detection
 			\end{itemize}
 		\end{block}
@@ -311,8 +336,6 @@
 		\end{block}
 
 		$\Rightarrow$ Detect clusters (subsystems)
-
-		%$\Rightarrow$ Find subsystems by finding clusters with common community detection algorithms (Walktrap) %TODO: etablierte Verfahren, referenziere Paper Mitchell Choblins Mauerer, Abels, wir ham Gedanken drüber gmacht, etabliertes Verfahren, wurde damit entwickelt und wir nehmen ned IRGENDWAS
 	\end{frame}
 
 \begin{frame}
@@ -411,15 +434,15 @@
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Reminder: Conform Patch Integration} %Leichte Vereinfachung von Maintainers hierarchie, First step analyse
-		\begin{alertblock}{Conform Patch Integration}
-			Patch integrated by relevant maintainer (from MAINTAINERS) $\Rightarrow$ \textbf{Conform Integration}
+	\frametitle{Reminder: Conforming Patch Integration} %Leichte Vereinfachung von Maintainers hierarchie, First step analyse
+		\begin{alertblock}{Conforming Patch Integration}
+			Patch integrated by relevant maintainer (from MAINTAINERS) $\Rightarrow$ \textbf{Conforming Integration}
 		\end{alertblock}
 
 		\begin{block}{TL;DR}
 			\begin{itemize}
 				\item Analyse recent patch integrations
-				\item Determine \textit{conform} patch integration
+				\item Determine \textit{conforming} patch integration
 				%\item Research recent patches in mainline and by which maintainer they were originally committed
 				%\item Maintainer relevant according to get\_maintainer.pl? $\Rightarrow$ "correctly" integrated
 				%\item Research on all major lists with highest patch traffic
@@ -431,14 +454,19 @@
 
 
 	\begin{frame}
-	\frametitle{Conform Patch Integration}
+	\frametitle{Conforming Patch Integration}
 	\begin{center}
 	\includegraphics[scale=0.05]{pics/exclamation.jpeg}
 	\end{center}
 
 		\begin{alertblock}{Important Note}
 			\begin{itemize}
-				\item Goal: Characterise/Improve process and patch integration %TODO: reinbringen iterativer Prozess: Erstmal den defacto ZEitpunkt extrahiert, den dann weiternehmen
+				\item Goal: Characterise/Improve process and patch integration\\
+					\begin{enumerate}
+						\item Extract current status
+						\item Analyse/Characterise/Discuss
+						\item Enhance
+					\end{enumerate}
 				\item We do not mean to point fingers!
 			\end{itemize}
 		\end{alertblock}
@@ -461,11 +489,12 @@
 	\frametitle{Future Work}
 		\begin{block}{Future Work}
 			\begin{itemize}
-				\item Combination: Subsystems and Conform Patch Integration
+				\item Combination: Subsystems and Conforming Patch Integration
+				\item Cluster discussion with the community
 				\item Cluster discussion on full section graph
-				\item Visualise earlier versions and development
+				\item Visualise earlier versions and subsystem development
+				\item Easier overview for newcomers (interactive graph)
 				\item Apply section graph to other open source projects (QEMU, U-Boot, buildroot)
-				\item Easier overview for newcomers
 				\item Maintainer Graph
 			\end{itemize}
 		\end{block}
