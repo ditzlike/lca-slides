@@ -1,10 +1,15 @@
-\documentclass{beamer}
-%\documentclass[12pt]{beamer}
-\usetheme{Copenhagen}
-%\usetheme{OTHR}
+%\documentclass{beamer}
+\documentclass[12pt]{beamer}
+%\usetheme{Copenhagen}
+\usetheme{OTHR}
 \usepackage{polyglossia}
 \usepackage{tabu}
 \usepackage{multicol}
+
+
+\setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\insertshorttitle
+\hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}\\
+\vspace{9pt}}
 
 
 \usepackage{tikz}
@@ -17,7 +22,7 @@
 \setdefaultlanguage{english}
 
 
-\title{So you're a Linux kernel developer? \\Name all subsytems.}
+\title{So you're a Linux kernel developer? \\Name all subsystems.}
 %\subtitle{Name all subsystems.}
 
 %\usetheme{lucid}
@@ -71,7 +76,7 @@
 
 
 	\begin{frame}
-	\frametitle{Research Group: Co-Authors}
+	\frametitle{Research Group: Collaborators}
 	\begin{minipage}[c]{1.0\linewidth}
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
@@ -93,24 +98,6 @@
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
 			\begin{center}
-     		\includegraphics[width=0.5\textwidth]{pics/speakers_mauerer.jpeg}
-			\end{center}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-		\begin{block}{Wolfgang Mauerer}
-			\begin{itemize}
-				\item Professor for theoretical computer science
-				\item wolfgang.mauerer@othr.de
-			\end{itemize}
-		\end{block}
-		\end{column}
-		\end{columns}
-
-	\end{minipage}
-	\begin{minipage}[c]{1.0\linewidth}
-		\begin{columns}
-		\begin{column}{0.35\textwidth}
-			\begin{center}
      		\includegraphics[width=0.5\textwidth]{pics/speakers_scherzinger.jpeg}
 			\end{center}
 		\end{column}
@@ -124,6 +111,24 @@
 			%Stefanie Scherzinger\\Professor for scalable database systems\\stefanie.scherzinger@uni-passau.de
 		\end{column}
 		\end{columns}
+	\end{minipage}
+	\begin{minipage}[c]{1.0\linewidth}
+		\begin{columns}
+		\begin{column}{0.35\textwidth}
+			\begin{center}
+     		\includegraphics[width=0.5\textwidth]{pics/speakers_mauerer.jpeg}
+			\end{center}
+		\end{column}
+		\begin{column}{0.7\textwidth}
+		\begin{block}{Wolfgang Mauerer}
+			\begin{itemize}
+				\item Professor for theoretical computer science
+				\item wolfgang.mauerer@othr.de
+			\end{itemize}
+		\end{block}
+		\end{column}
+		\end{columns}
+
 	\end{minipage}
 	\end{frame}
 
@@ -162,7 +167,7 @@
 
 	\begin{frame}
 	\frametitle{Safety Critical Environments: Certification}
-		\begin{block}{Certification Motivation}
+		\begin{block}{Safety Certification}
 			\begin{itemize}
 				\item Highly sensitive environment
 				\item Working software could ensure survival
@@ -183,7 +188,7 @@
 	\begin{frame}
 	\frametitle{Integration Project - Motivation and Beginnings}
 		\begin{block}{Linux + Safety Critical Environments}
-			= Major certification problems: Open development process
+			= Major certification problem: Open development process
 		\end{block}
 		$\Rightarrow$ Ex post facto analysis\\ 
 		%\Rightarrow Process characterisation with hindsight
@@ -211,7 +216,7 @@
 
 	\begin{frame}
 	\frametitle{Integration Project - Motivation and Beginnings}
-		\begin{block}{Maintainers Expectations vs Maintainers Reality: Original Projects}
+		\begin{block}{Original Projects}
 			\begin{itemize}
 				\item Conforming Integration of Patches
 					%\begin{itemize}
@@ -291,11 +296,11 @@
 	\begin{frame} 
 	\frametitle{Subsystem Definition}
 		\begin{block}{Definition: Subsystem}
-			Entries in MAINTAINERS: \textbf{sections}
-
-			Sections share files (measured in Lines of Code): \textbf{thematically related}
-
-			Grouping of thematically strong related sections: \textbf{subsystem}.
+			\begin{itemize}
+				\item Entries in MAINTAINERS: \textbf{sections}
+				\item Sections share files (measured in Lines of Code): \textbf{thematically related}
+				\item Grouping of thematically strong related sections: \textbf{subsystem}.
+			\end{itemize}
 
 		\end{block}
 	\end{frame}
@@ -310,7 +315,7 @@
 
 		%TODO Wir haben durch Grpahen die Möglichkeit, den Prozess aktiv zu verbessern, nochmal über Artikel drübergehen, einblenden
 
-		\begin{block}{Maintainers Expectations vs Maintainers Reality: New Projects}
+		\begin{block}{New Projects}
 			\begin{itemize}
 				\item Conforming Integration of Patches
 				\item Subsystem Detection
@@ -439,7 +444,7 @@
 			Patch integrated by relevant maintainer (from MAINTAINERS) $\Rightarrow$ \textbf{Conforming Integration}
 		\end{alertblock}
 
-		\begin{block}{TL;DR}
+		\begin{block}{tl;dr}
 			\begin{itemize}
 				\item Analyse recent patch integrations
 				\item Determine \textit{conforming} patch integration
@@ -475,7 +480,7 @@
 
 	\begin{frame}
 	\frametitle{Summary}
-		\begin{block}{Achievements}
+		\begin{block}{Results}
 			\begin{itemize}
 				\item Definition for subsystems
 				\item Visual representation of MAINTAINERS
@@ -502,69 +507,69 @@
 		All work integrated in https://github.com/lfd/PaStA
 	\end{frame}
 
-	\begin{frame}
-	\frametitle{Research Group}
-	\begin{minipage}[c]{1.0\linewidth}
-		\begin{columns}
-		\begin{column}{0.35\textwidth}
-			\begin{center}
-     		\includegraphics[width=0.3\textwidth]{pics/speaker_piaei.jpg}
-			\end{center}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-		\begin{block}{Pia Eichinger}
-			pia.eichinger@st.oth-regensburg.de
-		\end{block}
-		\end{column}
-		\end{columns}
-
-	\end{minipage}
-	\begin{minipage}[c]{1.0\linewidth}
-		\begin{columns}
-		\begin{column}{0.35\textwidth}
-			\begin{center}
-     		\includegraphics[width=0.3\textwidth]{pics/speakers_mauerer.jpeg}
-			\end{center}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-		\begin{block}{Prof. Dr. Wolfgang Mauerer}
-			wolfgang.mauerer@othr.de
-		\end{block}
-		\end{column}
-		\end{columns}
-
-	\end{minipage}
-	\begin{minipage}[c]{1.0\linewidth}
-		\begin{columns}
-		\begin{column}{0.35\textwidth}
-			\begin{center}
-     		\includegraphics[width=0.3\textwidth]{pics/speakers_ralf.png}
-			\end{center}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-		\begin{block}{Ralf Ramsauer}
-			ralf.ramsauer@othr.de
-		\end{block}
-			%Ralf Ramsauer\\PhD student \\
-		\end{column}
-		\end{columns}
-	\end{minipage}
-	\begin{minipage}[c]{1.0\linewidth}
-		\begin{columns}
-		\begin{column}{0.35\textwidth}
-			\begin{center}
-     		\includegraphics[width=0.3\textwidth]{pics/speakers_scherzinger.jpeg}
-			\end{center}
-		\end{column}
-		\begin{column}{0.7\textwidth}
-		\begin{block}{Prof. Dr. Stefanie Scherzinger}
-			stefanie.scherzinger@uni-passau.de
-		\end{block}
-			%Stefanie Scherzinger\\Professor for scalable database systems\\stefanie.scherzinger@uni-passau.de
-		\end{column}
-		\end{columns}
-	\end{minipage}
-	\end{frame}
+%	\begin{frame}
+%	\frametitle{Research Group}
+%	\begin{minipage}[c]{1.0\linewidth}
+%		\begin{columns}
+%		\begin{column}{0.35\textwidth}
+%			\begin{center}
+%     		\includegraphics[width=0.3\textwidth]{pics/speaker_piaei.jpg}
+%			\end{center}
+%		\end{column}
+%		\begin{column}{0.7\textwidth}
+%		\begin{block}{Pia Eichinger}
+%			pia.eichinger@st.oth-regensburg.de
+%		\end{block}
+%		\end{column}
+%		\end{columns}
+%
+%	\end{minipage}
+%	\begin{minipage}[c]{1.0\linewidth}
+%		\begin{columns}
+%		\begin{column}{0.35\textwidth}
+%			\begin{center}
+%     		\includegraphics[width=0.3\textwidth]{pics/speakers_mauerer.jpeg}
+%			\end{center}
+%		\end{column}
+%		\begin{column}{0.7\textwidth}
+%		\begin{block}{Prof. Dr. Wolfgang Mauerer}
+%			wolfgang.mauerer@othr.de
+%		\end{block}
+%		\end{column}
+%		\end{columns}
+%
+%	\end{minipage}
+%	\begin{minipage}[c]{1.0\linewidth}
+%		\begin{columns}
+%		\begin{column}{0.35\textwidth}
+%			\begin{center}
+%     		\includegraphics[width=0.3\textwidth]{pics/speakers_ralf.png}
+%			\end{center}
+%		\end{column}
+%		\begin{column}{0.7\textwidth}
+%		\begin{block}{Ralf Ramsauer}
+%			ralf.ramsauer@othr.de
+%		\end{block}
+%			%Ralf Ramsauer\\PhD student \\
+%		\end{column}
+%		\end{columns}
+%	\end{minipage}
+%	\begin{minipage}[c]{1.0\linewidth}
+%		\begin{columns}
+%		\begin{column}{0.35\textwidth}
+%			\begin{center}
+%     		\includegraphics[width=0.3\textwidth]{pics/speakers_scherzinger.jpeg}
+%			\end{center}
+%		\end{column}
+%		\begin{column}{0.7\textwidth}
+%		\begin{block}{Prof. Dr. Stefanie Scherzinger}
+%			stefanie.scherzinger@uni-passau.de
+%		\end{block}
+%			%Stefanie Scherzinger\\Professor for scalable database systems\\stefanie.scherzinger@uni-passau.de
+%		\end{column}
+%		\end{columns}
+%	\end{minipage}
+%	\end{frame}
 
 
 \end{document}
