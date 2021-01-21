@@ -1,5 +1,6 @@
 \documentclass{beamer}
 \usetheme{Copenhagen}
+%\usetheme{OTHR}
 \usepackage{polyglossia}
 \usepackage{tabu}
 \usepackage{multicol}
@@ -32,10 +33,16 @@
 	%	\end{block}
 	%\end{frame}
 
-	%TODO: Conclusion und so..., was haben wir grad gezeigt, wem bringt das was, wie kann ich das verwerten? -> Safety Argumentation, für das assessment von Entwicklungsprozessen, was bringt das der Community? -> wie sind denn Subsysteme so strukturiert etc. etc. 
-
-	%TODO: die graphen herzeigen, auf den Artikel auch hinweisen
 	% TODO: Am Anfang auch mal über die LWN herzeigen, dass des auch ne gewisse Relevanz hat
+	%TODO: Foliennummern eintragen
+	% TODO: erwähnen, dass das die Gruppe ist, mehr nicht
+	%TODO: Safety soll Prozess sicherstellen und Midnestqualität sicherstellen, jetzt mal in der Maintainers hierarchie schauen, inwiefern ist das Patch konform damit? Und da kommen keine Crosspatches rein
+	%Prozess definieren, was braucht man dafür, aber wenn man nicht weiß, wie es ausschauen soll, kann man nicht feststellen, ob es überhaupt konform ist
+	%TODO: Weniger Story da mit reinmachenj, sondern nur, dass man nicht weiß, was es ist, nirgendwo definiert
+	%TODO %s Conform -> Conforming
+	% TODO: Safety Critical Development: Guter, wohldefinierter und _befolgter_ Prozess -> Sicherstellung von Mindestqualität, Voraussetzung für Gutes Produkt -> Darf für safety-critical verwendet werden
+	% TODO: nicht so auf Forschung aufspalten, sondern die Gemeinsamkeiten hervorheben
+	%TODO: 
 
 
 	%Thank you very much
@@ -161,16 +168,15 @@
 		\begin{block}{Linux + Safety Critical Environments}
 			= Major certification problems: Development process
 		\end{block}
-		$\Rightarrow$ Ex post facto analysis\\ %TODO: Ex post facto analysis\\
+		$\Rightarrow$ Ex post facto analysis\\ 
 		%\Rightarrow Process characterisation with hindsight
 		$\Rightarrow$ Characterise the process with hindsight
 
 		\begin{alertblock}{Goal}
 			\begin{itemize}
 				\item Analytical quantitative software engineering
-				\item Analyse the integration of patch
+				\item Analyse the integration of patches
 			\end{itemize}
-			%Use analytical tools for quantitive software engineering to analyse patch integration in the Linux kernel repository. %TODO: Aufspalten Mit analytischem quantitativen Softwareengineering wird des gmacht
 		\end{alertblock}
 	\end{frame}
 
@@ -182,10 +188,13 @@
      		\includegraphics[width=1.0\textwidth]{pics/maintainers_hierarchy.png}
 	\end{frame}
 
+	% So have you read this article from the LWN, Maintainers Truth and Fiction? Very related work
+	% My work was called Maintainers Expectations vs Maintainers Reality
+
 
 	\begin{frame}
 	\frametitle{Bachelor Thesis - Motivation and Beginnings}
-		\begin{block}{Original Projects}
+		\begin{block}{Maintainers Expectations vs Maintainers Reality: Original Projects}
 			\begin{itemize}
 				\item Conform Integration of Patches
 				\item Patch traversal through maintainers hierarchy
@@ -254,7 +263,7 @@
 	\end{center}
 	\end{frame}
 
-	\begin{frame} %TODO: Entries in MAINTAINERS: sections, rechts in Bsp veranschaulichen
+	\begin{frame} 
 	\frametitle{Subsystem Definition}
 		\begin{block}{Definition: Subsystem}
 			Entries in MAINTAINERS: \textbf{sections}
@@ -272,7 +281,11 @@
 			$\Rightarrow$ Let's find out!
 		\end{block}
 
-		\begin{block}{Research Projects}
+		%Genauer überlegen, wo die Unterschiede sind:
+
+		%TODO Wir haben durch Grpahen die Möglichkeit, den Prozess aktiv zu verbessern, nochmal über Artikel drübergehen, einblenden
+
+		\begin{block}{Maintainers Expectations vs Maintainers Reality: New Projects}
 			\begin{itemize}
 				\item Conform Integration of Patches
 				\item Subsystem Detection
@@ -382,8 +395,8 @@
 	\frametitle{Cluster Discussion}
 		\begin{block}{Cluster Discussion}
 			\begin{itemize}
-				\item Major clusters: \textbf{isolated graph}
-				\item "Recluster" again from within
+				\item Major clusters: \textbf{isolate as own graph}
+				\item "Recluster" again from within: \textbf{substructure}
 			\end{itemize}
 		\end{block}
 		
@@ -398,7 +411,7 @@
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Reminder: Research Project}
+	\frametitle{Reminder: Conform Patch Integration} %Leichte Vereinfachung von Maintainers hierarchie, First step analyse
 		\begin{alertblock}{Conform Patch Integration}
 			Patch integrated by relevant maintainer (from MAINTAINERS) $\Rightarrow$ \textbf{Conform Integration}
 		\end{alertblock}
@@ -425,10 +438,23 @@
 
 		\begin{alertblock}{Important Note}
 			\begin{itemize}
+				\item Goal: Characterise/Improve process and patch integration %TODO: reinbringen iterativer Prozess: Erstmal den defacto ZEitpunkt extrahiert, den dann weiternehmen
 				\item We do not mean to point fingers!
-				\item Goal: Classify Patch Integration in \textit{some} way
 			\end{itemize}
 		\end{alertblock}
+	\end{frame}
+
+
+	\begin{frame}
+	\frametitle{Summary}
+		\begin{block}{Achievements}
+			\begin{itemize}
+				\item Definition for subsystems
+				\item Visual representation of MAINTAINERS
+				\item Fully-automated and sensible subsystem detection
+				\item Strong argumentation basis for certifications
+			\end{itemize}
+		\end{block}
 	\end{frame}
 
 	\begin{frame}
@@ -438,7 +464,7 @@
 				\item Combination: Subsystems and Conform Patch Integration
 				\item Cluster discussion on full section graph
 				\item Visualise earlier versions and development
-				\item Apply section graph to other open source projects (QEMU, U-Boot)
+				\item Apply section graph to other open source projects (QEMU, U-Boot, buildroot)
 				\item Easier overview for newcomers
 				\item Maintainer Graph
 			\end{itemize}
