@@ -43,17 +43,6 @@
 	%	\end{block}
 	%\end{frame}
 
-	% TODO: Foliennummern eintragen
-	% TODO: erwähnen, dass das die Gruppe ist, mehr nicht
-	% TODO: Safety soll Prozess sicherstellen und Midnestqualität sicherstellen, jetzt mal in der Maintainers hierarchie schauen, inwiefern ist das Patch konform damit? Und da kommen keine Crosspatches rein
-	%Prozess definieren, was braucht man dafür, aber wenn man nicht weiß, wie es ausschauen soll, kann man nicht feststellen, ob es überhaupt konform ist
-	% TODO: Weniger Story da mit reinmachenj, sondern nur, dass man nicht weiß, was es ist, nirgendwo definiert
-	% TODO: nicht so auf Forschung aufspalten, sondern die Gemeinsamkeiten hervorheben
-
-
-	%Thank you very much
-	%isn't much to say about me
-	%which is what my bachelor thesis is about
 
 	\begin{frame}
 	\frametitle{Speaker Introduction}
@@ -174,8 +163,8 @@
 			\begin{itemize}
 				\item Assumption: Development process impacts quality
 				\item Process adherence necessary (Degree?)
-				\item $\Rightarrow$ \textbf{How about the Linux kernel?}
-			\end{itemize} %TODO: notwendig aber nicht hinreichend, nimmt man an, Safety überprüft ob man sich dran hält und wie viel
+				%\item $\Rightarrow$ \textbf{How about the Linux kernel?} %Isser ja nicht, deswegen mal schauen, wie weit wir argumentieren können, kann man das tatsächlich zeigen, dass die Prozessqualität konform ist
+			\end{itemize} 
 		\end{block}
 
 	\end{frame}
@@ -255,16 +244,16 @@
 	\begin{columns}
 		\begin{column}{0.55\textwidth}
 			\begin{block}{Docs: Early-stage Planning}
-				"Again, the MAINTAINERS file is	the place to start. [...] not all \textbf{subsystems} are represented there."
+				``Again, the MAINTAINERS file is	the place to start. [...] not all \textbf{subsystems} are represented there.''
 			\end{block}
-			\begin{center}
-     		\includegraphics[width=0.6\textwidth]{pics/MAINTAINERSbild.png}
-			\end{center}
 		\end{column}
 		\begin{column}{0.5\textwidth}
 			\begin{center}
-			$\Rightarrow$ \textbf{Subsystems}
+     		\includegraphics[width=0.95\textwidth]{pics/MAINTAINERSbild.png}
 			\end{center}
+		%	\begin{center}
+		%	$\Rightarrow$ \textbf{Subsystems}
+		%	\end{center}
 		\end{column}
 	\end{columns}
 	\end{frame}
@@ -277,9 +266,9 @@
 	\end{center}
 
 	\begin{block}{But... }
-		\begin{itemize} %TODO: ausbessern
-		\item No "Media"/"Media Subsystem" entry in MAINTAINERS
-		\item Over 100 "subsystems" \textit{containing} the word "Media"
+		\begin{itemize} 
+		\item No ``Media''/``Media Subsystem'' entry in MAINTAINERS
+		\item Over 100 ``subsystems'' \textit{containing} the word ``Media''
 		\end{itemize}
 	\end{block}
 	\begin{center}
@@ -306,8 +295,6 @@
 		\end{block}
 
 		%Genauer überlegen, wo die Unterschiede sind:
-
-		%TODO Wir haben durch Grpahen die Möglichkeit, den Prozess aktiv zu verbessern, nochmal über Artikel drübergehen, einblenden
 
 		\begin{block}{New Projects}
 			\begin{itemize}
@@ -404,14 +391,13 @@
 \end{center}
 \end{frame}
 
+
 	\begin{frame}
 	\frametitle{Top-20\% Section Graph}
 	\begin{center}
 	\includegraphics[scale=0.3]{pics/SectionGraph_NoLabels.png}
 	\end{center}
 	\end{frame}
-
-
 
 	\begin{frame}
 	\frametitle{Cluster Discussion}
@@ -431,6 +417,29 @@
 		%	\end{itemize}
 		%\end{block}
 	\end{frame}
+
+
+	\begin{frame}
+	\frametitle{Networking Subsystem}
+	\begin{center}
+	\includegraphics[scale=0.3]{clusters/4_networking_general.pdf}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Media Subsystem}
+	\begin{center}
+	\includegraphics[scale=0.3]{clusters/8_media.pdf}
+	\end{center}
+\end{frame}
+
+	\begin{frame}
+		\frametitle{DRM Drivers Subsystem}
+	\begin{center}
+	\includegraphics[scale=0.3]{clusters/12_drm.pdf}
+	\end{center}
+\end{frame}
+
 
 	\begin{frame}
 	\frametitle{Reminder: Conforming Patch Integration} %Leichte Vereinfachung von Maintainers hierarchie, First step analyse
@@ -489,7 +498,7 @@
 		\begin{block}{Future Work}
 			\begin{itemize}
 				\item Combination: Subsystems and Conforming Patch Integration
-				\item Cluster discussion with the community
+				%\item Cluster discussion with the community
 				\item Cluster discussion on full section graph
 				\item Visualise earlier versions and subsystem development
 				\item Easier overview for newcomers (interactive graph)
