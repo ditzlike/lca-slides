@@ -1,5 +1,5 @@
 %\documentclass{beamer}
-\documentclass[12pt]{beamer}
+\documentclass[9pt]{beamer}
 %\usetheme{Copenhagen}
 \usetheme{OTHR}
 \usepackage{polyglossia}
@@ -7,8 +7,12 @@
 \usepackage{multicol}
 
 
-\setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\insertshorttitle
-\hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}\\
+%\setbeamertemplate{footline}{\hrule\vspace{9pt}\hspace*{.5cm}\scriptsize{\insertshorttitle
+%\hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}\\
+%\vspace{9pt}}
+\setbeamertemplate{footline}{\hrule\vspace{9pt}\hspace*{.5cm}\scriptsize{\insertshorttitle
+\hspace*{50pt} \hfill\insertframenumber\hspace*{.5cm}}
+
 \vspace{9pt}}
 
 
@@ -76,7 +80,7 @@
 
 
 	\begin{frame}
-	\frametitle{Research Group: Collaborators}
+	\frametitle{Collaborators}
 	\begin{minipage}[c]{1.0\linewidth}
 		\begin{columns}
 		\begin{column}{0.35\textwidth}
@@ -151,19 +155,11 @@
 		\end{block}
 		\begin{block}{Collaboration Partners}
 			\begin{itemize}
-				\item ELISA
+				\item ELISA (Linux Foundation)
 				\item University of Passau
 			\end{itemize}
 		\end{block}
-		$\Rightarrow$ Statistical Methods to research/understand the development process
 	\end{frame}
-
-	%So: Like already said, all started...
-	% One big goal for Elisa is to enable, but why problem?
-	%Dev process requires crit to be met
-	% Nobody really cares to perfectly document the process and keeping criteria in mind
-	% Our goal..., my focus specifically
-
 
 	\begin{frame}
 	\frametitle{Safety Critical Environments: Certification}
@@ -174,36 +170,34 @@
 				\item Need to ensure software quality \textbf{by all means necessary}
 			\end{itemize}
 		\end{block}
-		\begin{block}{Development Process: Trait of Code Quality}
-			\begin{enumerate}
-				\item Good, well-defined development process\\ 
-				\item Developers \textit{strictly} comply with the process\\
-				\item Trait of good, well-developed product\\
-				\item $\Rightarrow$ \textbf{Enable usage in safety critical environments}
-			\end{enumerate}
+		\begin{block}{Process and Quality}
+			\begin{itemize}
+				\item Assumption: Development process impacts quality
+				\item Process adherence necessary (Degree?)
+				\item $\Rightarrow$ \textbf{How about the Linux kernel?}
+			\end{itemize} %TODO: notwendig aber nicht hinreichend, nimmt man an, Safety überprüft ob man sich dran hält und wie viel
 		\end{block}
 
 	\end{frame}
 
 	\begin{frame}
-	\frametitle{Integration Project - Motivation and Beginnings}
+	\frametitle{Motivation}
 		\begin{block}{Linux + Safety Critical Environments}
 			= Major certification problem: Open development process
 		\end{block}
-		$\Rightarrow$ Ex post facto analysis\\ 
-		%\Rightarrow Process characterisation with hindsight
-		$\Rightarrow$ Characterise the process with hindsight
-
-		\begin{alertblock}{Goal}
 			\begin{itemize}
-				\item Analytical quantitative software engineering
-				\item Analyse the integration of patches
+				\item Ex post facto analysis
+				\item Characterise the process with hindsight (patch integration)
+				\item Statistical Methods to research/understand the development process
 			\end{itemize}
-		\end{alertblock}
+
+
+			%\begin{itemize}
+			%	\item Analytical quantitative software engineering
+			%	\item Analyse the integration of patches
+			%\end{itemize}
 	\end{frame}
 
-	%sure, all familiar with maintainers hier
-	
 
 	\begin{frame}
 	\frametitle{Maintainers Hierarchy}
@@ -283,7 +277,7 @@
 	\end{center}
 
 	\begin{block}{But... }
-		\begin{itemize}
+		\begin{itemize} %TODO: ausbessern
 		\item No "Media"/"Media Subsystem" entry in MAINTAINERS
 		\item Over 100 "subsystems" \textit{containing} the word "Media"
 		\end{itemize}
@@ -424,7 +418,7 @@
 		\begin{block}{Cluster Discussion}
 			\begin{itemize}
 				\item Major clusters: \textbf{isolate as own graph}
-				\item "Recluster" again from within: \textbf{substructure}
+				\item ``Recluster'' again from within: \textbf{substructure}
 			\end{itemize}
 		\end{block}
 		
@@ -454,7 +448,7 @@
 				%\item Go into detail as to \textit{why} a maintainer might have "incorrectly" committed patches outside of their relevant subsystem
 			\end{itemize}
 		\end{block}
-		$\Rightarrow$ Analyse reasons for "incorrect" patch integration
+		$\Rightarrow$ Analyse reasons for unconforming patch integration
 	\end{frame}
 
 
@@ -505,6 +499,16 @@
 		\end{block}
 
 		All work integrated in https://github.com/lfd/PaStA
+	\end{frame}
+
+
+	\begin{frame}
+	\frametitle{The End}
+	\begin{center}
+	\huge Thank you for listening!\\
+	\small pia.eichinger@st.oth-regensburg.de\\
+	https://github.com/lfd/PaStA
+	\end{center}
 	\end{frame}
 
 %	\begin{frame}
